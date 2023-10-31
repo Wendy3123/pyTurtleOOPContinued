@@ -45,8 +45,30 @@ screen.bgcolor("pink")
 
 #make the turtle go random directions 100 times
 
-direction = [0,90,180,270]
+# direction = [0,90,180,270]
 
+# #create our random color generator instead of using a list array above where we manually entered the color name
+# turtle.colormode(255) #set the color from 0 to 255 instead of 0 to 1
+# def random_color():
+#     r= random.randint(0,255)
+#     g= random.randint(0,255)
+#     b= random.randint(0,255)
+#     random_color = (r,g,b)
+#     return random_color
+
+# wendy.width(10)          #make line width thicker
+# wendy.speed('fastest')      #draws all the lines faster
+# for x in range(100):
+#     wendy.color(random_color())
+#     wendy.forward(30)
+#     wendy.setheading(random.choice(direction))
+
+
+
+
+
+
+#make turtle go in circles repeatedly like a SPIROGRAPH
 #create our random color generator instead of using a list array above where we manually entered the color name
 turtle.colormode(255) #set the color from 0 to 255 instead of 0 to 1
 def random_color():
@@ -55,16 +77,11 @@ def random_color():
     b= random.randint(0,255)
     random_color = (r,g,b)
     return random_color
-
-wendy.width(10)          #make line width thicker
-wendy.speed('fastest')      #draws all the lines faster
-colors =['violet','hot pink','medium orchid','blue violet','light sky blue','aquamarine']
-for x in range(100):
+wendy.speed('fastest') 
+for i in range(60):  
     wendy.color(random_color())
-    wendy.forward(30)
-    wendy.setheading(random.choice(direction))
-    
-
+    wendy.circle(100)
+    wendy.left(6)
 
 
 
