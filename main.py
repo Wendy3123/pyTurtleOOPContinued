@@ -1,4 +1,5 @@
 from turtle import Turtle,Screen
+import turtle
 import random
 
 wendy = Turtle()
@@ -15,6 +16,7 @@ screen.bgcolor("pink")
 #     wendy.penup()       #picks pen up so it stops drawing 
 #     wendy.forward(20)
 #     wendy.pendown()         #puts pen back down to draw again
+
 
 
 
@@ -38,10 +40,31 @@ screen.bgcolor("pink")
 # shapes(6)       #makes a hexagon
 # shapes(7)       #makes a 7 sided shape
 
-direction = ['right','left','forward']
-randomChoice= random.choice(direction)
-for x in range(10):
-    wendy.randomChoice(100)
+
+
+
+#make the turtle go random directions 100 times
+
+direction = [0,90,180,270]
+
+#create our random color generator instead of using a list array above where we manually entered the color name
+turtle.colormode(255) #set the color from 0 to 255 instead of 0 to 1
+def random_color():
+    r= random.randint(0,255)
+    g= random.randint(0,255)
+    b= random.randint(0,255)
+    random_color = (r,g,b)
+    return random_color
+
+wendy.width(10)          #make line width thicker
+wendy.speed('fastest')      #draws all the lines faster
+colors =['violet','hot pink','medium orchid','blue violet','light sky blue','aquamarine']
+for x in range(100):
+    wendy.color(random_color())
+    wendy.forward(30)
+    wendy.setheading(random.choice(direction))
+    
+
 
 
 
